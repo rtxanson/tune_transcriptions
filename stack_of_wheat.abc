@@ -1,0 +1,41 @@
+% Figuring out Old Stack of Wheat
+
+X: 1
+T: The Old Stack of Wheat
+R: reel
+M: 4/4
+L: 1/8
+K: Gmaj
+BA |: GEDE G3 B | ~A2  GAB ded | ged BGAB d | d BAGE3 z |
+| GGEDE GAB | G ~A2 GAB de | dged BGAB | GAG EF G2 A :|
+|: edBd edgd | edBd e3 z | fg edB GAB |[1 ddBAG E2 d:|2 GAGEFG2 |]
+
+
+X: 2
+T: The Old Stack of Wheat
+R: reel
+M: 4/4
+L: 1/8
+K: Gmaj
+|: AGED EG3 | B ~A2  GAB de | fged BGAB | ddB AG E3 |
+| GGEDE GAB | G ~A2 GAB de | fged BGAB | GAG EF G3 :|
+|: edBd edgd | edBd e3 z | fg edB GAB |[1 ddBAG E2 d:|2 GAGEFG2 |]
+
+
+% Transcription which is more accurate to a recording
+
+X: 3
+T: The Old Stack of Wheat
+R: reel
+M: 4/4
+L: 1/8
+K: Gmaj
+(B | B)ded Bded | gded Bde2 | fged BGAB | deBA GE2 G|
+| Bded Bded | gded Bde2 | fged BGAB | GAGE FG2 A |
+| Bded Bded | gded Bde2 | fged BGAB | deBAGE2 z |
+| GGEDE GAB | G (3 ABA GAB de | fged BGAB | GAGE FG3 |
+
+% |: edBd edgd | edBd e3 z | fg edB GAB |[1 ddBAG E2 d:|2 GAGEFG2 |]
+% |: AGED EG3 | B ~A2  GAB de | fged BGAB | ddB AG E3 |
+% | GGEDE GAB | G ~A2 GAB de | fged BGAB | GAG EF G3 :|
+
