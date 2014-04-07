@@ -11,7 +11,23 @@ and throwing in extra chords for spice. Substitutions are often possible, but
 also, what becomes tricky is the tunes that do not follow this, and knowing
 why.
 
-## Funky VIIs
+## Major patterns
+
+As said above, I, IV, and V are good ideas for major tunes. Added flavor may be
+included by way of VIIm, or VIm. Often, if one part of the tune may be broken
+into roughly 4 phrases, one beginning on I (I, IV, V, VIIm), a nifty way to add
+some drama to resolve, is to begin the next phrase with VIm, assuming the
+melody allows.
+
+TODO: write out notation and include an imagefor something with all that stuff.
+Need to sit down with a pianna for this.
+
+
+## Minor patterns
+
+## Mixolydian patterns
+
+### Funky VIIs
 
 Some tunes have a habit of varying a sharp or natural VII. This means C♮/C♯ for
 tunes in the key of D-ish, and F♮/F♯ for tunes in G-ish. Good examples of this
@@ -42,31 +58,6 @@ so, just open it up.
 [Source](http://thesession.org/tunes/841)
 
 
-## Major patterns
-
-As said above, I, IV, and V are good ideas for major tunes. Added flavor may be
-included by way of VIIm, or VIm. Often, if one part of the tune may be broken
-into roughly 4 phrases, one beginning on I (I, IV, V, VIIm), a nifty way to add
-some drama to resolve, is to begin the next phrase with VIm, assuming the
-melody allows.
-
-TODO: write out notation and include an imagefor something with all that stuff.
-Need to sit down with a pianna for this.
-
-    X: 1
-    T: The Scotsman Over The Border
-    R: jig
-    M: 6/8
-    L: 1/8
-    K: Dmix
-    |: "I"D3 FDF | "IV"AFA "V"d2A | BdB BAB |dgf edB |
-    "VIm"ADD FDF | AFA d2A | ~B3 AFA | dAF E3 :|
-    |: dfa afa | bag fef | dfa afe | def edB |
-    dfa afa | bag fed | B2B AFA |dAF E3 :|
-
-## Minor patterns
-
-## Mixolydian patterns
 
 ## Voicing
 
