@@ -29,8 +29,8 @@ Need to sit down with a pianna for this.
 
 ### Funky VIIs
 
-Some tunes have a habit of varying a sharp or natural VII. This means C♮/C♯ for
-tunes in the key of D-ish, and F♮/F♯ for tunes in G-ish. Good examples of this
+Some tunes have a habit of varying a sharp or natural VII. This means `C♮/C♯` for
+tunes in the key of D-ish, and `F♮/F♯` for tunes in G-ish. Good examples of this
 are: 
 
  * Gooseberry Bush
@@ -42,7 +42,7 @@ but, this is not really the same thing.
 Anyway, since both of the above tunes are mixolydian, you may rely on `I` and flat
 `VII` a lot. Mixolydian tunes like these also allow for substitution of the
 flat `VII` with a minor `V`. The complication with tunes that alternate between
-sharp and natural VIIs in the melody is that a minor `V` may clash sometimes:
+sharp and natural `VII`s in the melody is that a minor `V` may clash sometimes:
 so, just open it up.
 
 ### Gooseberry Bush

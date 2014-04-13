@@ -6,7 +6,6 @@ http://home.comcast.net/~saustin98/lark/htmchords/tunelist.txt
 Copied here for mirroring/safekeeping, more or less 
 
 
-
     ***********************************************
     Across The Black River
     Jig in A
