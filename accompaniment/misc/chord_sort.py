@@ -93,9 +93,29 @@ def main():
     tunes = map(Tune, chunk_tunes(lines))
     print 'tunes: %d' % len(tunes)
     print
+    print
 
     # TODO: grab all the keys, and sort by largest, then start to figure
     # out common progressions
+
+    tunes_g = [t for t in tunes if t.key == 'D' and t.type == 'Reel']
+
+    print len(tunes_g)
+
+    from collections import defaultdict
+
+    first_a_parts = defaultdict(list)
+
+    for g in tunes_g:
+        first_a_parts[ '|'.join([':'.join(b) for b in g.parts.get('A')]) ].append(g.title)
+
+    for k, v in first_a_parts.iteritems():
+        if len(v) > 1:
+            print k
+            for n in v:
+                print '  - ' + n
+
+
 
 if __name__ == "__main__":
     sys.exit(main())
