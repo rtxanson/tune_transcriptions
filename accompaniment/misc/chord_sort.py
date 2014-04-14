@@ -2,6 +2,20 @@ import os, sys
 
 _TUNE_DELIM = '***********************************************'
 
+_OUTPUT_HEADING = """# Tunes by chord profile
+
+Data Source: [Vashon Celtic Tunes](http://home.comcast.net/~saustin98/lark/)
+
+Tunes included: ~550
+
+Note: Some keys and tune types are left out, if there were not enough to sort
+into a reasonable amount. Headings include amount of tunes read, but obviously,
+not all these will be gruoped and displayed.
+
+Chords are listed in order of frequency.
+
+"""
+
 class Tune(object):
 
     def __repr__(self):
@@ -109,9 +123,9 @@ def main():
                  if l.startswith('    ')
                 ]
 
-    print >> sys.stdout, 'lines: %d' % len(lines)
+    print >> sys.stderr, 'lines: %d' % len(lines)
     tunes = map(Tune, chunk_tunes(lines))
-    print >> sys.stdout, 'tunes: %d' % len(tunes)
+    print >> sys.stderr, 'tunes: %d' % len(tunes)
     print >> sys.stdout, ''
     print >> sys.stdout, ''
 
@@ -126,9 +140,7 @@ def main():
         'Polka',
         'Barndance',
         'Reel',
-        'Rel',
         'Slip Jig',
-        'Slip jig',
     ]
 
     from collections import defaultdict
@@ -136,7 +148,7 @@ def main():
     keys_without_tunes = []
 
     for _type in filtered_types:
-        print >> sys.stdout, "# " + _type
+        print >> sys.stdout, "## " + _type
         print >> sys.stdout, ""
 
         _keys_for_tune_type = list(set((t.key for t in tunes if t.type == _type)))
@@ -148,7 +160,7 @@ def main():
             all_chords = defaultdict(list)
             for t in tunes_in_key:
                 # TODO: order unique_chords by chord frequency in tune
-                all_chords[ '|'.join(t.unique_chords) ].append(t.title)
+                all_chords[ ', '.join(t.unique_chords) ].append(t.title)
 
             print_tunes = []
             for k, v in all_chords.iteritems():
@@ -160,7 +172,7 @@ def main():
                     print_tunes.append('')
 
             if len(print_tunes) > 0:
-                print >> sys.stdout, "##", tune_key, "(%d tunes)" % len(tunes_in_key)
+                print >> sys.stdout, "###", tune_key, "(%d tunes)" % len(tunes_in_key)
                 print >> sys.stdout, ''
                 print >> sys.stdout, '\n'.join(print_tunes)
                 print >> sys.stdout, ''
