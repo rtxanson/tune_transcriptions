@@ -88,8 +88,16 @@ class Tune(object):
 
         sorted_chords = sorted( list(_all.iteritems()), key=itemgetter(1), reverse=True)
         chords = [a[0] for a in sorted_chords]
+        freqs = [a[1] for a in sorted_chords]
 
-        return chords
+        return chords, freqs
+
+    def chord_perc(self):
+        _max = float(sum(self.chord_freq))
+        perc = lambda x: str(int(round( (float(x)/_max)*100 ))) + '%'
+
+        cs = ["%s (%s)" % (name, perc(c)) for name, c in zip(self.unique_chords, self.chord_freq)]
+        return ', '.join(cs)
 
     def __init__(self, chunk):
         self.raw_chunk = [l for l in chunk if l != _TUNE_DELIM]
@@ -98,7 +106,8 @@ class Tune(object):
         self.type, self.key = self.process_type_sig(self.raw_chunk[1])
 
         self.parts = self.split_parts(self.raw_chunk[2::])
-        self.unique_chords = self.unique_the_chords(self.parts)
+        self.unique_chords, self.chord_freq = self.unique_the_chords(self.parts)
+        self.title = self.title + ': ' + self.chord_perc()
 
 def chunk_tunes(lines):
     chunks, chunk = [], []
