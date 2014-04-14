@@ -2003,7 +2003,7 @@ Copied here for mirroring/safekeeping, more or less
 
     ***********************************************
     Garach's Wedding
-    Slip jig in E Min
+    Slip Jig in E Min
 
     Part A
     Em | Bm7 | Am7 | Bm7
@@ -4223,7 +4223,7 @@ Copied here for mirroring/safekeeping, more or less
     D A | G D | D D | A D
     ***********************************************
     My Love Is In America
-    Rel in D
+    Reel in D
 
     Part A
     D D | D D | D D | C D

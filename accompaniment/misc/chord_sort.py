@@ -40,8 +40,10 @@ class Tune(object):
         part_key = None
 
         for l in chunk:
+
             if 'Note' in l:
                 continue
+
             if 'Part' in l:
                 part_key = l.replace('Part', '').replace(':', '').strip()
                 continue
@@ -58,15 +60,22 @@ class Tune(object):
         type, _, sig = l.partition(' in ')
         return type, sig
 
-    def uniqued(self, parts):
+    def unique_the_chords(self, parts):
         # TODO: remove repeat symbol (:) and sort in order of descending
         # frequency.
+        from collections import defaultdict
+        from operator import itemgetter
 
-        _all = []
+        _all = defaultdict(int)
         for k, v in parts.iteritems():
-            _all.extend( list(set(sum(v, []))) )
+            part_chords = list(sum(v, []))
+            for p in part_chords:
+                _all[p] += 1
 
-        return list(set(_all))
+        sorted_chords = sorted( list(_all.iteritems()), key=itemgetter(1), reverse=True)
+        chords = [a[0] for a in sorted_chords]
+
+        return chords
 
     def __init__(self, chunk):
         self.raw_chunk = [l for l in chunk if l != _TUNE_DELIM]
@@ -75,7 +84,7 @@ class Tune(object):
         self.type, self.key = self.process_type_sig(self.raw_chunk[1])
 
         self.parts = self.split_parts(self.raw_chunk[2::])
-        self.unique_chords = self.uniqued(self.parts)
+        self.unique_chords = self.unique_the_chords(self.parts)
 
 def chunk_tunes(lines):
     chunks, chunk = [], []
@@ -124,31 +133,43 @@ def main():
 
     from collections import defaultdict
 
+    keys_without_tunes = []
+
     for _type in filtered_types:
+        print >> sys.stdout, "# " + _type
+        print >> sys.stdout, ""
+
         _keys_for_tune_type = list(set((t.key for t in tunes if t.type == _type)))
 
-        for k in _keys_for_tune_type:
+        for tune_key in _keys_for_tune_type:
 
-            tunes_in_key = [t for t in tunes if t.key == k and t.type == _type]
-            print >> sys.stdout, ''
-            print >> sys.stdout, _type, k, "(%d tunes)" % len(tunes_in_key)
+            tunes_in_key = [t for t in tunes if t.key == tune_key and t.type == _type]
 
             all_chords = defaultdict(list)
             for t in tunes_in_key:
                 # TODO: order unique_chords by chord frequency in tune
                 all_chords[ '|'.join(t.unique_chords) ].append(t.title)
 
+            print_tunes = []
             for k, v in all_chords.iteritems():
                 if len(v) > 1:
-                    print >> sys.stdout, '    ' + k
+                    print_tunes.append('**%s**' % k)
+                    print_tunes.append('')
                     for n in v:
-                        print >> sys.stdout, '      - ' + n
+                        print_tunes.append(' - ' + n)
+                    print_tunes.append('')
 
-
-
+            if len(print_tunes) > 0:
+                print >> sys.stdout, "##", tune_key, "(%d tunes)" % len(tunes_in_key)
+                print >> sys.stdout, ''
+                print >> sys.stdout, '\n'.join(print_tunes)
+                print >> sys.stdout, ''
+            else:
+                keys_without_tunes.append(
+                    "%s %s (%d tunes)" % (_type, tune_key, len(tunes_in_key))
+                )
 
     # print len(tunes_g)
-
 
     # first_a_parts = defaultdict(list)
 
@@ -171,7 +192,6 @@ def main():
     #         print k
     #         for n in v:
     #             print '  - ' + n
-
 
 
 if __name__ == "__main__":
