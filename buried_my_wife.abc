@@ -5,9 +5,9 @@ M: 6/8
 L: 1/8
 K: Dmix
 |:DED F2 G|AdB =cAF|G3 BAG|F3 GEA|
-|DED F2 G|Azd =cAF|G3 BAG|1 AFD D2 z:|2 AFD DFA||
-|:d2e f3|faf gfe|d2e fed|dcA dcA|
-| d2e f3|a3 gfe|dcA BAG|1 AFD DFA:|2 AFD D2 z||
+|DED F2 G|Azd =cAF|G3 BAG| AFD D2 z:|
+|DFA ||:d2e f3|faf gfe|d2e fed|dcA dcA|
+| d2e f3|a3 gfe|dcA BAG| AFD D2 z:|
 
 X: 4
 T: Variation ideas for prev
@@ -16,6 +16,6 @@ M: 6/8
 L: 1/8
 K: Dmix
 |:DED F2 G|Azd =cAF|GEG BAG|FEF GEA|
-|DED F2 G|Azd =cAF|G3 BAG|1 AFD D2 z:|2 AFD DFA||
-|:d2e f3|a3 gfe|d2e fed|dcA dcA|
-| d2e f3|aza gfe|dcA BAG|1 AFD DFA:|2 AFD D2 z||
+|DED F2 G|Azd =cAF|G3 BAG| AFD D2 z:|
+DFA |:d2e f3|a3 gfe|d2e fed|dcA dcA|
+| d2e f3|aza gfe|dcA BAG| AFD D2 z||
